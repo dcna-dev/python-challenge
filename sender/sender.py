@@ -45,5 +45,5 @@ if __name__ == '__main__':
         resp = requests.post(URL, json=data_send)
         if resp.status_code != 200 and resp.text != "OK":
             print("Error: " + str(resp.status_code))
-    sleep(60)
+    print('--- Finished ---')
 
