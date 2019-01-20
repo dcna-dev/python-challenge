@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  server:
+    image: server
+    build: ./server
+    environment:
+      VH_DIR_SERVER: './data_server/'
+      VH_KEY: 'vanhackchallenge'
+    volumes:
+      - "./data/data_server:/server/data_server"
+    ports:
+      - "5000:5000"
+
+  sender:
+    image: sender
+    build: ./sender
+    links:
+      - server
+    environment:
+      VH_DIR_JSON: './data_json/'
+      VH_DIR_XML: './data_xml/'
+      VH_KEY: 'vanhackchallenge'
+      VH_URL: 'http://server:5000/vanhack/api/v1.0/upload'
+    volumes:
+      - "./data/data_json:/sender/data_json"
+      - "./data/data_xml:/sender/data_xml"
+    depends_on:
+      - server
