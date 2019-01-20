@@ -9,7 +9,7 @@ This solution:
   - Sender container:
     - Have a python script that:
         - Read json files from ./data_json/, converts it and save the XML files in ./data_xml/.
-        - Read the XML files, encrypt the data and send to server using HTTP POST and jso: {'file_name': 'encrypted_name', 'data': 'encrypted_data'}
+        - Read the XML files, encrypt the data and send to server using HTTP POST and json: {'file_name': 'encrypted_name', 'data': 'encrypted_data'}
 
   - Server container:
     - Have a Flask app that:
