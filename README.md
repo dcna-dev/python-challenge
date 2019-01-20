@@ -18,7 +18,8 @@ This solution:
       - Saves the in XML files in ./data_server/ using the same name as used in sender
 
 To use:
+  - Clone this repo
   - Puts the json files in ./data/data_json/
-  - Run docker-compose
+  - Run docker-compose -up
   - The sender XML files will be saved in ./data/data_xml/ (in plain text, the data is encrypted only when will be transfer)
   - The XML files received and decrypted by the server will be saved in ./data/data_server/
